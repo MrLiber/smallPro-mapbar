@@ -1,0 +1,43 @@
+<!--index.wxml-->
+<view class="index">
+  <view class='search-container flex-box flex-col'>
+    <view class='color-white center flex1'>
+      设置群目的地
+    </view>
+    <view class='flex2 rowCenter'>
+      <view class='flex-box center search-input'>
+        <icon type='search' size='25' color='#666666'></icon>
+        <input bindtap='navEvent' class='margin-left70' placeholder='请输入搜索的地点'></input>
+      </view>
+    </view>
+    
+  </view>
+  <view class='main-container'>
+    <view class='color-main'>
+      <view class='center'>
+        <text class='margin-top20 margin-bottom20'>快来设置目的地分享给好友</text>
+      </view>
+      <view class='center'>
+        <text class='margin-top20 margin-bottom20'>一起组队出发吧</text>
+      </view>
+      
+    </view>
+    <view class='introduction'>
+      <view class='flex2 array-container'>
+        <view wx:for="{{showList}}" class='flex-box array-item margin-top20 margin-bottom20'>
+          <icon type="{{item.icon}}" size='25' color='#000'></icon>  
+          <text class='margin-left20'>{{item.text}}</text> 
+        </view>
+      </view>
+    </view>
+    
+  </view>
+  <view class='join-container center color-main' 
+    bindtap='modelEvent'
+  >输入已有群号码，快速加入群组导航</view> 
+</view>
+
+<modal hidden='{{modalHidden}}' bindconfirm="modalChange" bindcancel="modalCancel">
+  <view class='center color-black'>输入群号码</view>
+  <input class='border margin-top20 padding10' type='text' placeholder='在此输入'></input>
+</modal>

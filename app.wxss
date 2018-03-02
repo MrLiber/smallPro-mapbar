@@ -1,0 +1,109 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+.color-white{
+  color: #fff;
+}
+.color-main{
+  color:#3c78ff;
+}
+.center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.flex-box{
+  display: flex;
+}
+.flex-col{
+  flex-direction: column;
+}
+.flex1{
+  flex:1;
+}
+.flex2{
+  flex:2;
+}
+.flex3{
+  flex: 3;
+}
+.flex4{
+  flex: 4;
+}
+.center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.rowCenter{
+  display: flex;
+  justify-content: center;
+}
+.col-center{
+  display: flex;
+  align-items: center;
+}
+
+/* 边框相关 */
+.margin-left70{
+  margin-left: 70rpx;
+}
+.margin-left20{
+    margin-left: 20rpx;
+}
+.margin-top20{
+    margin-top: 20rpx;
+}
+.margin-right20{
+    margin-right: 20rpx;
+}
+.margin-right15{
+    margin-right: 15rpx;
+}
+.margin-bottom20{
+    margin-bottom: 20rpx;
+}
+.border{
+  border: 1rpx solid #808080;
+}
+.padding20{
+    padding: 20rpx
+}
+.padding10{
+    padding: 10rpx
+}
+
+/* border */
+.border{
+    border: 2rpx solid #ccc;
+}
+.border-top{
+    border-top: 2rpx solid #ccc;
+}
+.border-bottom{
+    border-bottom: 2rpx solid #ccc;
+}
+
+/* 按钮定制 */
+.btn{
+    width: 140rpx;
+    height: 70rpx;
+    border-radius: 10rpx;
+    background-color: #3c78ff;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* 图标 */
+.icon{
+    width: 40rpx;
+    height: 40rpx;
+}

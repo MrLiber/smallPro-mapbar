@@ -1,0 +1,28 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/search/search"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#3c78ff",
+    "navigationBarTitleText": "图吧同行",
+    "navigationBarTextStyle":"#fff"
+  },
+  "tabBar": {
+    "color": "black",
+    "selectedColor": "#3c78ff",
+    "list": [      
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "icon": "success"        
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "text": "日志"        
+      }
+    ]
+  }
+}
