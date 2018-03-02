@@ -1,4 +1,5 @@
 // pages/search/search.js
+import AppService from '../../services/AppService.js';
 Page({
 
   /**
@@ -7,6 +8,7 @@ Page({
   data: {
     historyList:[],
     inputValue: '',
+    newList:[]
   },
   clearHistory: function(){
     this.setData({
@@ -16,6 +18,7 @@ Page({
   },
   inputEvent: function(e) {
     var value = e.detail.value;
+    var _this = this;
     this.setData({
       inputValue:value
     });
@@ -28,22 +31,54 @@ Page({
         var speed = res.speed
         var accuracy = res.accuracy
 
-        wx.request({
-          url: 'https://w.mapbar.com/search2015/search/suggest',
-          data: {
-            keywords: '北京',
-            city: '110000',
-            location: latitude + ',' + longitude
-          },
-          header: {
-            'content-type': 'application/json' //默认值
-          },
-          success: function (res) {
-            console.log('搜索结果', res.data)
-          }
+        //封装的服务
+        AppService.searchSuggest(value,latitude,longitude).then((res)=>{
+          console.log('服务',res);
+          var list = res.data.pois;
+          var newList = list.map((item, index) => {
+            return item.name
+          });
+          var recomArray = _this.dealItemString(newList, value);
+          _this.setData({
+            recommandList: recomArray
+          })
         })
+        // wx.request({
+        //   url: 'https://w.mapbar.com/search2015/search/suggest',
+        //   data: {
+        //     keywords: value,
+        //     city: '110000',
+        //     location: latitude + ',' + longitude
+        //   },
+        //   header: {
+        //     'content-type': 'application/json' //默认值
+        //   },
+        //   success: function (res) {
+        //     console.log('搜索结果', res.data)
+        //     var list = res.data.pois;
+        //     var newList = list.map((item,index) => {
+        //       return item.name
+        //     });
+        //     var recomArray = _this.dealItemString(newList,value);
+        //     _this.setData({
+        //       recommandList: recomArray
+        //     })
+        //   }
+        // })
       },
     })
+  },
+  dealItemString: function(list,important){
+    var left,mid,right;
+    var myList = list.map((item,index) => {
+      var obj = new Object();
+      var strIndex = item.indexOf(important);
+      obj.left = item.substring(0,strIndex);
+      obj.mid = important;
+      obj.right = item.substring(strIndex+important.length,item.length)
+      return obj;
+    })
+    return myList;
   },
   searchEvent: function() {
     var input = this.data.inputValue;//获取input的值

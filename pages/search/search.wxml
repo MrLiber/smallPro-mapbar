@@ -19,14 +19,33 @@
     <view class='btn margin-right20'  bindtap='searchEvent'>搜索</view>
   </view>
 </view>
-<view>
-  <view class='input-item' wx:for='{{historyList}}'>
+<!-- 历史记录弹框 -->
+<view wx:if='{{!inputValue}}'>
+  <view class='input-item' wx:key='{{index}}' wx:for='{{historyList}}'>
     <image class='icon' src='/resouces/myicon/clock.png'></image>
     <text class='flex1 item-text'>{{item}}</text>
     <image class='icon item-image' src='/resouces/myicon/listInput.png'></image>
   </view>
 </view>
-<view wx:if='{{historyList.length}}' bindtap='clearHistory' class='center clear-box'>
+<view wx:if='{{historyList.length && !inputValue}}' bindtap='clearHistory' class='center clear-box'>
   清除历史记录
 </view>  
+
+
+<!-- 展示联想搜索的弹框 -->
+<view>
+  <view class='input-item' wx:key='{{index}}' wx:for='{{recommandList}}'>
+    <image class='icon' src='/resouces/myicon/search.png'></image>
+    
+    <text class='flex1 item-text'>
+      <!-- 左 -->
+      <text>{{item.left}}</text>
+      <!-- 中 -->
+      <text class='color-main'>{{item.mid}}</text>
+      <!-- 右 -->
+      <text>{{item.right}}</text>
+    </text>
+    <image class='icon item-image' src='/resouces/myicon/listInput.png'></image>
+  </view>
+</view>
 </view>
