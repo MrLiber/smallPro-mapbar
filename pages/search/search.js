@@ -33,7 +33,7 @@ Page({
 
         //封装的服务
         AppService.searchSuggest(value,latitude,longitude).then((res)=>{
-          console.log('服务',res);
+          // console.log('服务',res);
           var list = res.data.pois;
           var newList = list.map((item, index) => {
             return item.name
@@ -43,28 +43,6 @@ Page({
             recommandList: recomArray
           })
         })
-        // wx.request({
-        //   url: 'https://w.mapbar.com/search2015/search/suggest',
-        //   data: {
-        //     keywords: value,
-        //     city: '110000',
-        //     location: latitude + ',' + longitude
-        //   },
-        //   header: {
-        //     'content-type': 'application/json' //默认值
-        //   },
-        //   success: function (res) {
-        //     console.log('搜索结果', res.data)
-        //     var list = res.data.pois;
-        //     var newList = list.map((item,index) => {
-        //       return item.name
-        //     });
-        //     var recomArray = _this.dealItemString(newList,value);
-        //     _this.setData({
-        //       recommandList: recomArray
-        //     })
-        //   }
-        // })
       },
     })
   },
@@ -82,6 +60,23 @@ Page({
   },
   searchEvent: function() {
     var input = this.data.inputValue;//获取input的值
+    if(input){
+      wx.navigateTo({
+        url:`/pages/searchResult/searchResult?des=${input}`,
+      })
+    }else{
+      wx.showModal({
+        title: '提示',
+        content: '请输入搜索内容',
+        success: function (res) {
+          if (res.confirm) {
+            console.log('点击了确定')
+          }else if(res.cancel) {
+            console.log('点击了取消')
+          }
+        }
+      })
+    }
     var arr = wx.getStorageSync('history');//S得到已经储存在缓存中的数组
     !arr && (arr = []);//如果数组不存在，就给一个新的数组
     // var flag = true;

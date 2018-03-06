@@ -1,0 +1,32 @@
+.circle{
+  width: 36rpx;
+  height: 36rpx;
+  background: #3c7;
+  border-radius: 50%;
+}
+
+.point{
+  font-size: 36rpx;
+}
+
+.address{
+  font-size: 26rpx;
+  color: #ccc;
+}
+
+.item-right{
+  font-size: 20rpx;
+  color: #ccc;
+}
+
+.watch-map{
+  height: 60rpx;
+  font-size: 30rpx;
+  color: #808080;
+}
+
+.set-des{
+  height: 60rpx;
+  font-size: 30rpx;
+  color: #808080;
+}

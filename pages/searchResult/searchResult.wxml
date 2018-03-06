@@ -1,0 +1,20 @@
+<!-- pages/searchResult/searchResult.wxml -->
+<view>
+  <view class='flex-box flex-col list-item' wx:key='{{index}}' wx:for="{{recommandList}}">
+    <view class='flex-box flex3'>
+      <view class='item-left margin-left20'>
+        <view class='circle center color-white margin-top20 margin-right20'>{{index+1}}</view>
+      </view>
+      <view class='flex-box flex-col flex1'>
+        <view class='point margin-top20'>{{item.name}}</view>
+        <view class='address margin-top20 margin-bottom20'>{{item.address}}</view>
+      </view>
+      <view class='item-right margin-top20 margin-right20'>东214km</view>
+    </view>
+
+    <view class='flex-box flex2'>
+      <view class='flex1 center watch-map border'>看地图</view>
+      <view class='flex1 center set-des border'>设终点</view>
+    </view>
+  </view>
+</view>
