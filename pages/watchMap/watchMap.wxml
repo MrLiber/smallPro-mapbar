@@ -1,0 +1,29 @@
+<!--pages/watchMap/watchMap.wxml-->
+<view class='flex-box flex-col'>
+    <map 
+    id="map" 
+    markers="{{markers}}" 
+    bindmarkertap='markersEvent' 
+    bindcontroltap='controlsEvent'
+    show-location 
+    include-points="{{markers}}" 
+    controls="{{controls}}"
+    class='flex1 map'></map>
+
+    <swiper
+     bindchange='swiperEvent' 
+     current="{{currentIndex}}" 
+     style='height: 100px;' 
+     circular="{{true}}" 
+     indicator-dots="{{indicatorDots}}" 
+     autoplay="{{false}}" 
+     duration="{{duration}}">
+    <block wx:key="{{index}}" wx:for="{{markers}}">
+        <swiper-item class="swiperBox">   
+          <view class='name'><text>{{item.city}}</text></view>   
+          <view class='distance'><text>{{item.distance}}</text></view>    
+          <view class='center endPoint' bindtap='sentEnd'><image src='../../resouces/myicon/end.png'></image><text>设终点</text></view>
+        </swiper-item>
+    </block>
+    </swiper>
+</view>

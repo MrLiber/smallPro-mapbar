@@ -1,0 +1,25 @@
+/* pages/watchMap/watchMap.wxss */
+#map{
+  width: 100%;
+  height: 1000rpx;
+}
+
+.swiperBox{
+  padding: 6rpx;
+}
+
+.distance{
+  font-size: 26rpx;
+  color: #808080;
+  border-bottom: 1px solid #808080;
+  padding-bottom: 18rpx;
+}
+
+image{
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.endPoint{
+  margin-top: 24rpx;
+}
