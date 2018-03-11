@@ -25,6 +25,9 @@
 .flex-col{
   flex-direction: column;
 }
+.flex-row{
+  flex-direction: row;
+}
 .flex1{
   flex:1;
 }
@@ -106,4 +109,9 @@
 .icon{
     width: 40rpx;
     height: 40rpx;
+}
+
+/* 宽度 */
+.width100 {
+  width: 100rpx;
 }

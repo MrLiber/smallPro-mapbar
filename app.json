@@ -3,7 +3,11 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/search/search",
-    "pages/searchResult/searchResult"
+    "pages/searchResult/searchResult",
+    "pages/watchMap/watchMap",
+    "pages/setEnd/setEnd",
+    "pages/set/set",
+    "pages/chat/chat"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -11,6 +15,7 @@
     "navigationBarTitleText": "图吧同行",
     "navigationBarTextStyle":"#fff"
   },
+
   "tabBar": {
     "color": "black",
     "selectedColor": "#3c78ff",
