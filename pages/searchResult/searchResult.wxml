@@ -1,5 +1,5 @@
 <!-- pages/searchResult/searchResult.wxml -->
-<view>
+<view class='resultList'>
   <view class='flex-box flex-col list-item' wx:key='{{index}}' wx:for="{{recommandList}}">
     <view class='flex-box flex3'>
       <view class='item-left margin-left20'>
@@ -13,8 +13,10 @@
     </view>
 
     <view class='flex-box flex2'>
-      <view class='flex1 center watch-map border'>看地图</view>
-      <view class='flex1 center set-des border'>设终点</view>
+      <view class='flex1 center watch-map border' bindtap='watchMapEvent' data-item='北京首都国际机场'>
+      <image style='width: 30rpx; height: 30rpx;' src='../../resouces/myicon/watchMap.png'></image>看地图</view>
+      <view class='flex1 center set-des border' bindtap='setDesEvent'  data-item='北京首都国际机场'>
+      <image style='width: 30rpx; height: 30rpx;' src='../../resouces/myicon/destination.png'></image>设终点</view>
     </view>
   </view>
 </view>

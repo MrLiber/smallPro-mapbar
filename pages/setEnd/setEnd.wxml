@@ -1,0 +1,54 @@
+<!--pages/setEnd/setEnd.wxml-->
+<view class='flex-box flex-col'>
+    <view class='userBox flex-box flex-row'>
+      <view class='userPhoto color-main'>
+        <image  class='user' src="{{userInfo.avatarUrl}}"></image>
+        <view><text>{{userInfo.nickName}}</text></view>
+      </view>
+
+      <view>
+        <image class='add' src='../../resouces/image/share.png'></image>
+        <view class='addFont'><text>邀请</text></view>
+      </view>
+    </view>
+
+    <view class='itemsBox flex-box'>
+        <view class='flex1 items'>
+          <view class='color-main'>150.4公里</view>
+          <view class='title'>距目的地</view>
+        </view>    
+        <view class='flex1 items'>
+          <view class='color-main'>1小时31分钟</view>
+          <view class='title'>剩余时间</view>
+        </view>
+        <view class='flex1 items'>
+          <view class='color-main'>100km/h</view>
+          <view class='title'>当前时速</view>
+        </view>
+    </view>
+
+    <view class='updateTime'>更新于03-10 12:21</view>
+
+    <map 
+    id="map" 
+    markers="{{markers}}" 
+    bindmarkertap='markersEvent' 
+    bindcontroltap='controlsEvent'
+    show-location 
+    include-points="{{markers}}" 
+    controls="{{controls}}"
+    class='flex1 map'></map>
+
+    <view class='flex-box speakBox'>
+        <view class='center width100'>
+            <image bindtap='setEvent' class='icon' src='/resouces/myicon/set.png'></image>
+        </view>
+        <view class='center flex1'>
+            <button>按住说话</button>
+        </view>
+        <view class='center width100'>
+            <image bindtap='chatEvent' class='icon' src='/resouces/myicon/chat.png'></image>
+        </view>
+    </view>
+    
+</view>

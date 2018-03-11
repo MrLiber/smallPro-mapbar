@@ -8,6 +8,33 @@ Page({
   data: {
     recommandList: []
   },
+  // 看地图
+  watchMapEvent: function (e) {
+    var value = e.currentTarget.dataset.item;
+    if (value) {
+      wx.navigateTo({
+        url: '/pages/watchMap/watchMap?value='+value,
+      })
+    }
+  },
+  // 设终点
+  setDesEvent: function (e) {
+    var value = e.currentTarget.dataset.item;
+    if(value){
+      wx.navigateTo({
+        url: '/pages/setEnd/setEnd?value='+value,
+      })
+    }
+  },
+  reLaunch: function() {
+    wx.reLaunch({
+      url: '/pages/chat/chat',
+      success: function(res) {},
+      fail: function(res) {},
+      complete: function(res) {},
+    })
+  },
+  // 监听页面加载
   onLoad: function(option) {
     var value = option.des;
     var _this = this;

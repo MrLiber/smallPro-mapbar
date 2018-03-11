@@ -30,3 +30,7 @@
   font-size: 30rpx;
   color: #808080;
 }
+
+.list-item{
+  padding-bottom: 20rpx;
+}
