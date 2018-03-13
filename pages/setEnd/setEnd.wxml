@@ -3,7 +3,7 @@
     <view class='userBox flex-box flex-row'>
       <view class='userPhoto color-main'>
         <image  class='user' src="{{userInfo.avatarUrl}}"></image>
-        <view><text>{{userInfo.nickName}}</text></view>
+        <view><text>博</text></view>
       </view>
 
       <view>
